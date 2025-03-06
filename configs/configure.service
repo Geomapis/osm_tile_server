@@ -1,0 +1,11 @@
+[Unit]
+Description=Run configure script
+After=network.target
+
+[Service]
+ExecStart=/scripts/configure.sh
+Type=oneshot
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

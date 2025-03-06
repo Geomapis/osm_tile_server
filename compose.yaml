@@ -1,0 +1,12 @@
+services:
+  tile:
+    build:
+      context: .
+    image: tile_server
+    privileged: true
+    volumes:
+      - ${PWD}/openstreetmap-carto:/root/src/openstreetmap-carto
+      - ${PWD}/tiles:/var/www/html/tiles
+      - ${PWD}/db-data:/var/lib/postgresql/data
+    ports:
+      - "8081:80"
