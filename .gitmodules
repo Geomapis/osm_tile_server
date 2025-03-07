@@ -1,0 +1,4 @@
+[submodule "openstreetmap-carto"]
+	path = openstreetmap-carto
+	url = https://github.com/Geomapis/openstreetmap-carto.git
+	branch = osm_main
