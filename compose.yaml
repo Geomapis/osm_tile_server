@@ -10,3 +10,4 @@ services:
       - ${PWD}/db-data:/var/lib/postgresql/data
     ports:
       - "8081:80"
+      - "5433:5432"

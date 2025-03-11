@@ -28,8 +28,8 @@ RUN apt install -y \
     postgresql-16-postgis-3-scripts \
     osm2pgsql \
     net-tools \
-    curl
-    # rsyslog
+    curl \
+    rsyslog
 RUN npm install -g carto
 
 COPY scripts /scripts
@@ -43,6 +43,7 @@ COPY configs/sample_leaflet.html /var/www/html/sample_leaflet.html
 RUN systemctl enable configure.service
 RUN systemctl enable renderd.service
 RUN systemctl enable apache2.service
+RUN systemctl enable rsyslog.service
 
 COPY data /root/data
 RUN chown _renderd /root/data
